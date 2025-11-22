@@ -1,0 +1,14 @@
+---
+description: Before starting ANY task, you MUST first locate and read the `CLAUDE.md` file in the current or root directory. You must strictly follow all rules, coding standards, architectural patterns, and guidelines defined in it. This includes following any linked documentation files referenced in `CLAUDE.md`. 
+alwaysApply: true
+---
+
+**Detailed Instructions:**
+1. **Locate & Read:** Always check for `CLAUDE.md` in the current directory or project root. Read it completely before proceeding.
+2. **Follow Strictly:** Adhere to all project-specific conventions, required libraries, security practices, and patterns described. Follow both "do's" and "don'ts".
+3. **Check References:** Consult and follow any linked documentation files mentioned in `CLAUDE.md` (like `ARCHITECTURE.md`, `API_SPEC.md`, etc.).
+4. **Acknowledge & Confirm:** Explicitly state that you've read `CLAUDE.md` and relevant docs before answering. Mention specific applicable rules when relevant.
+
+**Failure Condition:** Proceeding with any task without first checking and following `CLAUDE.md` and its referenced documentation.
+
+**Goal:** Ensure all work aligns with project standards and maintains code quality and team consistency.

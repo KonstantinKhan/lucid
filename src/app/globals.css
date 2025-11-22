@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Neomorphism styles */
+.neomorphic-card {
+  background: var(--background);
+  border-radius: 16px;
+  box-shadow: 
+    8px 8px 16px rgba(0, 0, 0, 0.1),
+    -8px -8px 16px rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.neomorphic-card:hover {
+  box-shadow: 
+    12px 12px 24px rgba(0, 0, 0, 0.12),
+    -12px -12px 24px rgba(255, 255, 255, 0.9);
+}
+
+.neomorphic-text {
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.1),
+    -1px -1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.neomorphic-checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  background: var(--background);
+  box-shadow: 
+    inset 4px 4px 8px rgba(0, 0, 0, 0.1),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.neomorphic-checkbox:checked {
+  box-shadow: 
+    inset 2px 2px 4px rgba(0, 0, 0, 0.2),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.5);
+}
+
+.neomorphic-checkbox:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #4CAF50;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .neomorphic-card {
+    box-shadow: 
+      8px 8px 16px rgba(0, 0, 0, 0.5),
+      -8px -8px 16px rgba(255, 255, 255, 0.05);
+  }
+  
+  .neomorphic-card:hover {
+    box-shadow: 
+      12px 12px 24px rgba(0, 0, 0, 0.6),
+      -12px -12px 24px rgba(255, 255, 255, 0.08);
+  }
+  
+  .neomorphic-text {
+    text-shadow: 
+      2px 2px 4px rgba(0, 0, 0, 0.5),
+      -1px -1px 2px rgba(255, 255, 255, 0.1);
+  }
+  
+  .neomorphic-checkbox {
+    box-shadow: 
+      inset 4px 4px 8px rgba(0, 0, 0, 0.5),
+      inset -4px -4px 8px rgba(255, 255, 255, 0.05);
+  }
+  
+  .neomorphic-checkbox:checked {
+    box-shadow: 
+      inset 2px 2px 4px rgba(0, 0, 0, 0.7),
+      inset -2px -2px 4px rgba(255, 255, 255, 0.1);
+  }
+}
