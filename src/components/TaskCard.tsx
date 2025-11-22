@@ -5,6 +5,7 @@ import { PlayCircle, CheckCircle, Circle, PauseCircle, Ban, LucideIcon } from 'l
 
 interface TaskCardProps {
   task: Task;
+  onStatusChange?: (taskId: string) => void;
 }
 
 const iconMap: Record<string, LucideIcon> = {
@@ -15,13 +16,13 @@ const iconMap: Record<string, LucideIcon> = {
   'ban': Ban,
 };
 
-export default function TaskCard({ task }: TaskCardProps) {
+export default function TaskCard({ task, onStatusChange }: TaskCardProps) {
   const isCompleted = task.status.id === '2';
   const isCancelled = task.status.id === '5';
   
   // Определяем класс карточки в зависимости от статуса
   const getCardClassName = () => {
-    const baseClass = 'p-4 transition-all hover:scale-[1.02]';
+    const baseClass = 'p-4 transition-all hover:scale-[1.02] cursor-pointer';
     
     switch (task.status.id) {
       case '1': // В работе
@@ -36,6 +37,13 @@ export default function TaskCard({ task }: TaskCardProps) {
         return `neomorphic-card-cancelled ${baseClass} opacity-50`;
       default:
         return `neomorphic-card ${baseClass}`;
+    }
+  };
+
+  const handleIconClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (onStatusChange) {
+      onStatusChange(task.id);
     }
   };
   
@@ -58,12 +66,16 @@ export default function TaskCard({ task }: TaskCardProps) {
         <div className="flex-1">
           <div className="flex items-center gap-2 mb-1">
             {task.status.icon && iconMap[task.status.icon] && (
-              <span className="shrink-0">
+              <button
+                onClick={handleIconClick}
+                className="shrink-0 transition-transform hover:scale-110 focus:outline-none rounded"
+                aria-label="Изменить статус задачи"
+              >
                 {(() => {
                   const IconComponent = iconMap[task.status.icon];
                   return <IconComponent className="w-5 h-5" />;
                 })()}
-              </span>
+              </button>
             )}
             <h3 className={getTitleClassName()}>
               {task.title}
