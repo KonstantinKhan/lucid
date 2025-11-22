@@ -15,3 +15,7 @@
 - [constants](/src/constants) - constnants for work and demostration
 - [services](/src/services)
 - [types](/src/types)
+
+## Principles
+
+- Each logical UI-component must be in a separate file.
