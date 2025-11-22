@@ -41,6 +41,131 @@ body {
     -12px -12px 24px rgba(255, 255, 255, 0.9);
 }
 
+/* Status-specific card styles */
+.neomorphic-card-new {
+  background: var(--background);
+  border-radius: 16px;
+  position: relative;
+  box-shadow: 
+    8px 8px 16px rgba(0, 0, 0, 0.1),
+    -8px -8px 16px rgba(255, 255, 255, 0.8),
+    0 0 25px rgba(255, 215, 0, 0.25),
+    0 0 15px rgba(255, 255, 255, 0.4),
+    inset 0 0 30px rgba(255, 215, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.neomorphic-card-new::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.neomorphic-card-new:hover {
+  box-shadow: 
+    12px 12px 24px rgba(0, 0, 0, 0.12),
+    -12px -12px 24px rgba(255, 255, 255, 0.9),
+    0 0 35px rgba(255, 215, 0, 0.35),
+    0 0 20px rgba(255, 255, 255, 0.5),
+    inset 0 0 35px rgba(255, 215, 0, 0.12);
+}
+
+.neomorphic-card-new > * {
+  position: relative;
+  z-index: 1;
+}
+
+.neomorphic-card-in-progress {
+  background: var(--background);
+  border-radius: 16px;
+  box-shadow: 
+    8px 8px 16px rgba(0, 0, 0, 0.1),
+    -8px -8px 16px rgba(255, 255, 255, 0.8),
+    0 0 15px rgba(255, 140, 0, 0.4),
+    0 -4px 12px rgba(255, 140, 0, 0.3),
+    0 4px 12px rgba(255, 140, 0, 0.3),
+    -4px 0 12px rgba(255, 140, 0, 0.3),
+    4px 0 12px rgba(255, 140, 0, 0.3),
+    inset 0 0 15px rgba(255, 140, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.neomorphic-card-in-progress:hover {
+  box-shadow: 
+    12px 12px 24px rgba(0, 0, 0, 0.12),
+    -12px -12px 24px rgba(255, 255, 255, 0.9),
+    0 0 20px rgba(255, 140, 0, 0.5),
+    0 -6px 15px rgba(255, 140, 0, 0.4),
+    0 6px 15px rgba(255, 140, 0, 0.4),
+    -6px 0 15px rgba(255, 140, 0, 0.4),
+    6px 0 15px rgba(255, 140, 0, 0.4),
+    inset 0 0 18px rgba(255, 140, 0, 0.2);
+}
+
+.neomorphic-card-frozen {
+  background: var(--background);
+  border-radius: 16px;
+  box-shadow: 
+    8px 8px 16px rgba(0, 0, 0, 0.1),
+    -8px -8px 16px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(100, 149, 237, 0.4),
+    inset 0 0 20px rgba(100, 149, 237, 0.15);
+  transition: all 0.3s ease;
+}
+
+.neomorphic-card-frozen:hover {
+  box-shadow: 
+    12px 12px 24px rgba(0, 0, 0, 0.12),
+    -12px -12px 24px rgba(255, 255, 255, 0.9),
+    0 0 30px rgba(100, 149, 237, 0.5),
+    inset 0 0 25px rgba(100, 149, 237, 0.2);
+}
+
+.neomorphic-card-completed {
+  background: var(--background);
+  border-radius: 16px;
+  box-shadow: 
+    8px 8px 16px rgba(0, 0, 0, 0.1),
+    -8px -8px 16px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(76, 175, 80, 0.3),
+    inset 0 0 20px rgba(76, 175, 80, 0.1);
+  transition: all 0.3s ease;
+}
+
+.neomorphic-card-completed:hover {
+  box-shadow: 
+    12px 12px 24px rgba(0, 0, 0, 0.12),
+    -12px -12px 24px rgba(255, 255, 255, 0.9),
+    0 0 30px rgba(76, 175, 80, 0.4),
+    inset 0 0 25px rgba(76, 175, 80, 0.15);
+}
+
+.neomorphic-card-cancelled {
+  background: var(--background);
+  border-radius: 16px;
+  box-shadow: 
+    8px 8px 16px rgba(0, 0, 0, 0.1),
+    -8px -8px 16px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(244, 67, 54, 0.25),
+    inset 0 0 20px rgba(244, 67, 54, 0.08);
+  transition: all 0.3s ease;
+}
+
+.neomorphic-card-cancelled:hover {
+  box-shadow: 
+    12px 12px 24px rgba(0, 0, 0, 0.12),
+    -12px -12px 24px rgba(255, 255, 255, 0.9),
+    0 0 30px rgba(244, 67, 54, 0.35),
+    inset 0 0 25px rgba(244, 67, 54, 0.12);
+}
+
 .neomorphic-text {
   text-shadow: 
     2px 2px 4px rgba(0, 0, 0, 0.1),
@@ -107,5 +232,99 @@ body {
     box-shadow: 
       inset 2px 2px 4px rgba(0, 0, 0, 0.7),
       inset -2px -2px 4px rgba(255, 255, 255, 0.1);
+  }
+  
+  .neomorphic-card-new {
+    box-shadow: 
+      8px 8px 16px rgba(0, 0, 0, 0.5),
+      -8px -8px 16px rgba(255, 255, 255, 0.05),
+      0 0 25px rgba(255, 215, 0, 0.2),
+      0 0 15px rgba(255, 255, 255, 0.1),
+      inset 0 0 30px rgba(255, 215, 0, 0.05);
+  }
+  
+  .neomorphic-card-new::before {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.12) 0%, rgba(255, 255, 255, 0.02) 100%);
+  }
+  
+  .neomorphic-card-new:hover {
+    box-shadow: 
+      12px 12px 24px rgba(0, 0, 0, 0.6),
+      -12px -12px 24px rgba(255, 255, 255, 0.08),
+      0 0 35px rgba(255, 215, 0, 0.3),
+      0 0 20px rgba(255, 255, 255, 0.15),
+      inset 0 0 35px rgba(255, 215, 0, 0.08);
+  }
+  
+  .neomorphic-card-in-progress {
+    box-shadow: 
+      8px 8px 16px rgba(0, 0, 0, 0.5),
+      -8px -8px 16px rgba(255, 255, 255, 0.05),
+      0 0 15px rgba(255, 140, 0, 0.3),
+      0 -4px 12px rgba(255, 140, 0, 0.25),
+      0 4px 12px rgba(255, 140, 0, 0.25),
+      -4px 0 12px rgba(255, 140, 0, 0.25),
+      4px 0 12px rgba(255, 140, 0, 0.25),
+      inset 0 0 15px rgba(255, 140, 0, 0.1);
+  }
+  
+  .neomorphic-card-in-progress:hover {
+    box-shadow: 
+      12px 12px 24px rgba(0, 0, 0, 0.6),
+      -12px -12px 24px rgba(255, 255, 255, 0.08),
+      0 0 20px rgba(255, 140, 0, 0.4),
+      0 -6px 15px rgba(255, 140, 0, 0.3),
+      0 6px 15px rgba(255, 140, 0, 0.3),
+      -6px 0 15px rgba(255, 140, 0, 0.3),
+      6px 0 15px rgba(255, 140, 0, 0.3),
+      inset 0 0 18px rgba(255, 140, 0, 0.15);
+  }
+  
+  .neomorphic-card-frozen {
+    box-shadow: 
+      8px 8px 16px rgba(0, 0, 0, 0.5),
+      -8px -8px 16px rgba(255, 255, 255, 0.05),
+      0 0 20px rgba(100, 149, 237, 0.3),
+      inset 0 0 20px rgba(100, 149, 237, 0.1);
+  }
+  
+  .neomorphic-card-frozen:hover {
+    box-shadow: 
+      12px 12px 24px rgba(0, 0, 0, 0.6),
+      -12px -12px 24px rgba(255, 255, 255, 0.08),
+      0 0 30px rgba(100, 149, 237, 0.4),
+      inset 0 0 25px rgba(100, 149, 237, 0.15);
+  }
+  
+  .neomorphic-card-completed {
+    box-shadow: 
+      8px 8px 16px rgba(0, 0, 0, 0.5),
+      -8px -8px 16px rgba(255, 255, 255, 0.05),
+      0 0 20px rgba(76, 175, 80, 0.25),
+      inset 0 0 20px rgba(76, 175, 80, 0.08);
+  }
+  
+  .neomorphic-card-completed:hover {
+    box-shadow: 
+      12px 12px 24px rgba(0, 0, 0, 0.6),
+      -12px -12px 24px rgba(255, 255, 255, 0.08),
+      0 0 30px rgba(76, 175, 80, 0.35),
+      inset 0 0 25px rgba(76, 175, 80, 0.12);
+  }
+  
+  .neomorphic-card-cancelled {
+    box-shadow: 
+      8px 8px 16px rgba(0, 0, 0, 0.5),
+      -8px -8px 16px rgba(255, 255, 255, 0.05),
+      0 0 20px rgba(244, 67, 54, 0.2),
+      inset 0 0 20px rgba(244, 67, 54, 0.06);
+  }
+  
+  .neomorphic-card-cancelled:hover {
+    box-shadow: 
+      12px 12px 24px rgba(0, 0, 0, 0.6),
+      -12px -12px 24px rgba(255, 255, 255, 0.08),
+      0 0 30px rgba(244, 67, 54, 0.3),
+      inset 0 0 25px rgba(244, 67, 54, 0.1);
   }
 }

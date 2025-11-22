@@ -1,9 +1,9 @@
-export interface Task {
-  id: string;
-  title: string;
-  description?: string;
-  completed: boolean;
-  createdAt: Date;
-  updatedAt: Date;
-}
+import { Status } from './status'
 
+export interface Task {
+  id: string
+  title: string
+  status: Status
+  createdAt: Date
+  updatedAt: Date
+}

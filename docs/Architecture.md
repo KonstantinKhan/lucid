@@ -11,7 +11,7 @@
 
 - [api](/src/api) - working witn the API
 - [app](/src/app) - forlder with routing
-- [components](/src/components) - reusable components
-- [constants](/src/constants)
+- [components](/docs/components/Components.md) - reusable components
+- [constants](/src/constants) - constnants for work and demostration
 - [services](/src/services)
 - [types](/src/types)

@@ -1,6 +1,7 @@
 'use client';
 
 import { Task } from '@/types/task';
+import TaskCard from './TaskCard';
 
 interface TaskListProps {
   tasks: Task[];
@@ -20,42 +21,7 @@ export default function TaskList({ tasks }: TaskListProps) {
       ) : (
         <div className="space-y-4">
           {tasks.map((task) => (
-            <div
-              key={task.id}
-              className={`neomorphic-card p-4 transition-all hover:scale-[1.02] ${
-                task.completed ? 'opacity-60' : ''
-              }`}
-            >
-              <div className="flex items-start gap-4">
-                <input
-                  type="checkbox"
-                  checked={task.completed}
-                  readOnly
-                  className="mt-1 w-5 h-5 neomorphic-checkbox cursor-pointer"
-                />
-                <div className="flex-1">
-                  <h3
-                    className={`text-lg font-semibold mb-1 ${
-                      task.completed ? 'line-through text-gray-400' : ''
-                    }`}
-                  >
-                    {task.title}
-                  </h3>
-                  {task.description && (
-                    <p
-                      className={`text-sm text-gray-600 ${
-                        task.completed ? 'line-through' : ''
-                      }`}
-                    >
-                      {task.description}
-                    </p>
-                  )}
-                  <div className="mt-2 text-xs text-gray-400">
-                    Создано: {new Date(task.createdAt).toLocaleDateString('ru-RU')}
-                  </div>
-                </div>
-              </div>
-            </div>
+            <TaskCard key={task.id} task={task} />
           ))}
         </div>
       )}
