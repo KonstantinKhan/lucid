@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Task } from '@/types/task';
 import TaskCard from './TaskCard';
 import StatusFilterDropdown from './StatusFilterDropdown';
@@ -152,9 +153,24 @@ export default function TaskList({ tasks: initialTasks }: TaskListProps) {
         </div>
       ) : (
         <div className="space-y-4">
-          {filteredTasks.map((task) => (
-            <TaskCard key={task.id} task={task} onStatusChange={handleStatusChange} />
-          ))}
+          <AnimatePresence mode="popLayout">
+            {filteredTasks.map((task) => (
+              <motion.div
+                key={task.id}
+                layout
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{
+                  layout: { duration: 0.3, ease: 'easeInOut' },
+                  opacity: { duration: 0.2 },
+                  y: { duration: 0.2 }
+                }}
+              >
+                <TaskCard task={task} onStatusChange={handleStatusChange} />
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
       )}
     </div>
