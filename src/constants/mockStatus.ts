@@ -1,4 +1,4 @@
-import { Status } from '@/types/status';
+import { Status } from '@/types/Status';
 
 export const statusInProgress: Status = {
   id: '1',
@@ -28,4 +28,10 @@ export const statusCancelled: Status = {
   id: '5',
   title: 'Отменено',
   icon: 'ban',
+};
+
+export const statusBlocked: Status = {
+  id: '6',
+  title: 'Заблокирована',
+  icon: 'lock',
 };

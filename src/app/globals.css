@@ -166,6 +166,25 @@ body {
     inset 0 0 25px rgba(244, 67, 54, 0.12);
 }
 
+.neomorphic-card-blocked {
+  background: var(--background);
+  border-radius: 16px;
+  box-shadow: 
+    8px 8px 16px rgba(0, 0, 0, 0.1),
+    -8px -8px 16px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 152, 0, 0.4),
+    inset 0 0 20px rgba(255, 152, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.neomorphic-card-blocked:hover {
+  box-shadow: 
+    12px 12px 24px rgba(0, 0, 0, 0.12),
+    -12px -12px 24px rgba(255, 255, 255, 0.9),
+    0 0 30px rgba(255, 152, 0, 0.5),
+    inset 0 0 25px rgba(255, 152, 0, 0.2);
+}
+
 .neomorphic-text {
   text-shadow: 
     2px 2px 4px rgba(0, 0, 0, 0.1),
@@ -326,5 +345,21 @@ body {
       -12px -12px 24px rgba(255, 255, 255, 0.08),
       0 0 30px rgba(244, 67, 54, 0.3),
       inset 0 0 25px rgba(244, 67, 54, 0.1);
+  }
+  
+  .neomorphic-card-blocked {
+    box-shadow: 
+      8px 8px 16px rgba(0, 0, 0, 0.5),
+      -8px -8px 16px rgba(255, 255, 255, 0.05),
+      0 0 20px rgba(255, 152, 0, 0.3),
+      inset 0 0 20px rgba(255, 152, 0, 0.1);
+  }
+  
+  .neomorphic-card-blocked:hover {
+    box-shadow: 
+      12px 12px 24px rgba(0, 0, 0, 0.6),
+      -12px -12px 24px rgba(255, 255, 255, 0.08),
+      0 0 30px rgba(255, 152, 0, 0.4),
+      inset 0 0 25px rgba(255, 152, 0, 0.15);
   }
 }
